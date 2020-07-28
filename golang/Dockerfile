@@ -22,12 +22,12 @@ RUN go env -w GONOSUMDB=*.100tal.com
 #COPY --from=builder /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 
 
-WORKDIR $GOPATH/src/app
-ADD ./app $GOPATH/src/app
+WORKDIR $GOPATH/src/hello
+ADD ./hello $GOPATH/src/hello
 #RUN go build .
 
 EXPOSE 8080
 
-ENTRYPOINT ["./app"]
+ENTRYPOINT ["./hello"]
 
 

@@ -73,6 +73,7 @@ services:
       - "8002:8002"
       - "8080:8080"
     volumes:
+      - ./golang-app/:/go/src/app/:ro
       # host file 
       - ./golang/hosts:/etc/hosts
 
