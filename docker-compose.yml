@@ -64,3 +64,26 @@ services:
     links:
       - php
 
+  # golang
+  golang:
+    build: ./golang
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
+      - "8080:8080"
+    volumes:
+      # host file 
+      - ./golang/hosts:/etc/hosts
+
+    # environment:
+    # Set your APP env variables here:
+    # - APP_KEY=
+    # - DB_HOST=
+    # - DB_DATABASE=
+    # - DB_USERNAME=
+    # - DB_PASSWORD=
+    links:
+      - mysql:mysql
+      - redis:redis
+
